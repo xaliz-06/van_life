@@ -13,6 +13,8 @@ import VanDetail from './routes/Vans/VanDetail.js';
 import Dashboard from './routes/Host/Dashboard.js';
 import Income from './routes/Host/Income.js';
 import Reviews from './routes/Host/Reviews.js';
+import HostVans from './routes/Host/HostVans.js';
+import HostVanDetail from './routes/Host/HostVanDetail.js';
 
 import './server';
 
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
           {
             path: 'reviews',
             element: <Reviews />,
+          },
+          {
+            path: 'vans',
+            element: <HostVans />,
+          },
+          {
+            path: 'vans/:id',
+            element: <HostVanDetail />,
           },
         ],
       },

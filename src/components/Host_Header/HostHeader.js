@@ -1,20 +1,52 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './HostHeader.module.css';
 
 const HostHeader = () => {
   return (
     <nav className={styles.nav}>
-      <Link to="/host" className={`${styles.nav_link}`}>
+      <NavLink
+        to="."
+        end
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.nav_link} ${styles.active}`
+            : `${styles.nav_link}`
+        }
+      >
         Dashboard
-      </Link>
-      <Link to="/host/income" className={styles.nav_link}>
+      </NavLink>
+      <NavLink
+        to="income"
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.nav_link} ${styles.active}`
+            : `${styles.nav_link}`
+        }
+      >
         Income
-      </Link>
-      <Link to="/host/reviews" className={styles.nav_link}>
+      </NavLink>
+      <NavLink
+        to="vans"
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.nav_link} ${styles.active}`
+            : `${styles.nav_link}`
+        }
+      >
+        Vans
+      </NavLink>
+      <NavLink
+        to="reviews"
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.nav_link} ${styles.active}`
+            : `${styles.nav_link}`
+        }
+      >
         Reviews
-      </Link>
+      </NavLink>
     </nav>
   );
 };
