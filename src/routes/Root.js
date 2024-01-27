@@ -13,6 +13,9 @@ const Root = () => {
         <Link to="/about" className={styles.nav_link}>
           About
         </Link>
+        <Link to="/vans" className={styles.nav_link}>
+          Vans
+        </Link>
       </nav>
       <main>
         <Outlet />
