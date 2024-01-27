@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #dfdfdf;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* STYLES RE-USED */
+.home-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url('./assets/images/home-hero.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: calc(100vh - 4rem);
   color: white;
+  padding: 45px 23px;
+  font-family: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.home-container h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 42px;
+  margin-bottom: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-container p {
+  line-height: 24px;
+  width: 60%;
+  text-align: center;
+  margin: 1.8rem auto;
+}
+
+.home-container a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff8c38;
+  border: none;
+  width: 30%;
+  margin-top: 27px;
+  padding-block: 0.75rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.home-container a:hover {
+  transform: translate(1px, 1px);
+}
+
+/*** ABOUT PAGE ***/
+.about-page-hero {
+  position: relative;
+  margin-bottom: 15rem;
+}
+
+.about-hero-image {
+  max-width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.about-page-content {
+  position: absolute;
+  top: 60%;
+  right: 2rem;
+  padding: 2rem;
+  color: #161616;
+  margin: 3rem auto;
+  border-radius: 20px;
+  background-color: #bcb4b4;
+  width: 40%;
+}
+
+.about-page-content h1 {
+  line-height: 38px;
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.about-page-content p {
+  line-height: 22px;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+.about-page-cta {
+  background-color: #ffcc8d;
+  color: #161616;
+  padding-inline: 32px;
+  padding-bottom: 32px;
+}
+
+.about-page-cta h2 {
+  margin: 0;
+  padding-block: 37px;
+}
+
+.about-page-cta .link-button {
+  background-color: #161616;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.7s ease-in-out;
+}
+
+.about-page-cta .link-button:hover {
+  text-decoration: underline;
 }
