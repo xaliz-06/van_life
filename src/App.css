@@ -13,6 +13,11 @@ body {
   background-color: #dfdfdf;
 }
 
+main {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 /* STYLES RE-USED */
 .home-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
@@ -289,4 +294,17 @@ i[class*='van-type-'] {
   font-size: 1.6rem;
   border-radius: 10px;
   border: none;
+}
+
+/* HOST LAYOUT */
+
+.host_layout_container {
+  width: 100%;
+  margin: 0rem auto;
+  min-height: 80vh;
+  border-radius: 15px;
+}
+
+.host_content {
+  padding: 2rem;
 }

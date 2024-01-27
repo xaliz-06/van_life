@@ -1,13 +1,20 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Root from './routes/Root';
+import Root from './routes/Layout/Root.js';
+import Host from './routes/Layout/Host.js';
+
 import Home from './routes/Home';
 import About from './routes/About';
-import Vans from './routes/Vans.js';
+
+import Vans from './routes/Vans/Vans.js';
+import VanDetail from './routes/Vans/VanDetail.js';
+
+import Dashboard from './routes/Host/Dashboard.js';
+import Income from './routes/Host/Income.js';
+import Reviews from './routes/Host/Reviews.js';
 
 import './server';
-import VanDetail from './routes/VanDetail.js';
 
 const router = createBrowserRouter([
   {
@@ -19,15 +26,34 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/about',
+        path: 'about',
         element: <About />,
       },
       {
-        path: '/vans',
+        path: 'host',
+        element: <Host />,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: 'income',
+            element: <Income />,
+          },
+          {
+            path: 'reviews',
+            element: <Reviews />,
+          },
+        ],
+      },
+
+      {
+        path: 'vans',
         element: <Vans />,
       },
       {
-        path: '/vans/:id',
+        path: 'vans/:id',
         element: <VanDetail />,
       },
     ],
