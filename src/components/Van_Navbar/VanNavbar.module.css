@@ -1,0 +1,28 @@
+.host_van_detail_nav {
+  display: flex;
+  margin-block: 25px;
+}
+
+.host_van_detail_nav_link {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host_van_detail_nav_link:first-of-type {
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 15px;
+  margin-left: -15px;
+}
+
+.host_van_detail_nav_link:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.active {
+  text-decoration: underline;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Outlet } from 'react-router-dom';
+import VanNavbar from '../../components/Van_Navbar/VanNavbar';
 
 const HostVanDetail = () => {
   const [currVan, setCurrVan] = useState(null);
@@ -37,6 +38,10 @@ const HostVanDetail = () => {
             <h4>${currVan.price}/day</h4>
           </div>
         </div>
+        <VanNavbar />
+        <section className="host-van-detail-content">
+          <Outlet context={{ currVan }} />
+        </section>
       </div>
     </section>
   );

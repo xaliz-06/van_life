@@ -17,6 +17,9 @@ import HostVans from './routes/Host/HostVans.js';
 import HostVanDetail from './routes/Host/HostVanDetail.js';
 
 import './server';
+import HostVanInfo from './routes/Host/HostVanInfo.js';
+import HostVanPricing from './routes/Host/HostVanPricing.js';
+import HostVanPhotos from './routes/Host/HostVanPhotos.js';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +57,20 @@ const router = createBrowserRouter([
           {
             path: 'vans/:id',
             element: <HostVanDetail />,
+            children: [
+              {
+                index: true,
+                element: <HostVanInfo />,
+              },
+              {
+                path: 'pricing',
+                element: <HostVanPricing />,
+              },
+              {
+                path: 'photos',
+                element: <HostVanPhotos />,
+              },
+            ],
           },
         ],
       },
