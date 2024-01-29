@@ -20,6 +20,7 @@ import './server';
 import HostVanInfo from './routes/Host/HostVanInfo.js';
 import HostVanPricing from './routes/Host/HostVanPricing.js';
 import HostVanPhotos from './routes/Host/HostVanPhotos.js';
+import Error from './routes/Error.js';
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: 'vans/:id',
         element: <VanDetail />,
+      },
+      {
+        path: '*',
+        element: <Error />,
       },
     ],
   },
