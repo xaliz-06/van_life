@@ -1,0 +1,6 @@
+.error_page {
+  min-height: 85.5vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
+import loginAvatar from '../../assets/images/avatar-icon.png';
+
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -39,6 +41,9 @@ const Navbar = () => {
       >
         Vans
       </NavLink>
+      <Link to="login" className={styles.nav_link}>
+        <img src={loginAvatar} className={styles.login_img} alt="login" />
+      </Link>
     </nav>
   );
 };

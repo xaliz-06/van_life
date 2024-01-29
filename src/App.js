@@ -22,6 +22,9 @@ import HostVanPricing from './routes/Host/HostVanPricing.js';
 import HostVanPhotos from './routes/Host/HostVanPhotos.js';
 import Error from './routes/Error.js';
 
+import { loader as VansLoader } from './routes/Vans/Vans.js';
+import ErrorPage from './components/Error_Page/ErrorPage.js';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -78,6 +81,8 @@ const router = createBrowserRouter([
 
       {
         path: 'vans',
+        loader: VansLoader,
+        errorElement: <ErrorPage />,
         element: <Vans />,
       },
       {

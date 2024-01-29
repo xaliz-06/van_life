@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom';
 import { getVans } from '../../components/api/api';
 
 const Vans = () => {
@@ -7,26 +7,9 @@ const Vans = () => {
 
   const typeFilter = searchParams.get('type');
 
-  const [vans, setVans] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    async function loadVans() {
-      setLoading(true);
-      try {
-        const data = await getVans();
-        setVans(data);
-      } catch (err) {
-        console.log(err);
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadVans();
-  }, []);
+  const vans = useLoaderData();
 
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
@@ -50,10 +33,6 @@ const Vans = () => {
       </Link>
     </div>
   ));
-
-  if (loading) {
-    return <h1>Loading data...</h1>;
-  }
 
   if (error) {
     return <h1>There was an error: {error.message}</h1>;
@@ -114,3 +93,13 @@ const Vans = () => {
 };
 
 export default Vans;
+
+export function loader() {
+  try {
+    const vans = getVans();
+    return vans;
+  } catch (error) {
+    console.error('Error fetching vans:', error);
+    return null;
+  }
+}
